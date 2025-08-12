@@ -6,6 +6,10 @@ app = Flask(__name__)
 def index():
     return '<h1>Hello, World!</h1>'
 
+@app.route('/user/<name>')
+def user(name):
+    return '<h1>Hello, %s!</h1>' % name
+
 def main():
     print("Hello from flasky!")
     app.run(debug=True)
